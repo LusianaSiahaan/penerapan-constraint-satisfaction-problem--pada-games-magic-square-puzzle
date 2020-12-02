@@ -1,0 +1,2 @@
+# penerapan-constraint-satisfaction-problem--pada-games-magic-square-puzzle
+Repository ini digunakan untuk mengumpulkan perkembangan pekerjaan dari kelompok TwoPercent untuk proyek Repository ini digunakan untuk mengumpulkan progress dari proyek Penerapan Constraint Satisfaction Problem  pada Games Magic Square Puzzle. Proyek ini bertujuan untuk mencari penyelesaian pengerjaaan permainan Magic Square Puzzle. Penggunaan konsep pada proyek ini adalah Constraint Satisfaction Problem pada algoritma Backtracking.
