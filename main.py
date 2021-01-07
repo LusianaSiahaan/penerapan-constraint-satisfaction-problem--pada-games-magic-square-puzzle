@@ -7,11 +7,11 @@ grid = input("Masukkan jumlah kotak yang diinginkan= ")
 print(type(grid))
 jlh_kotak = int(grid)
 
-if jlh_kotak == 3:
+if n == 3:
     import grid_3x3
-if jlh_kotak == 4:
+if n == 4:
     import grid_4x4
-if jlh_kotak == 5:
+if n == 5:
     import grid_5x5
 else:
    print("Grid tidak ditemukan!")
