@@ -1,17 +1,20 @@
 # Function utama aplikasi
 
-print("Kotak 3x3 = 3")
-print("Kotak 4x4 = 4")
-print("Kotak 5x5 = 5")
-grid = input("Masukkan jumlah kotak yang diinginkan= ")
-print(type(grid))
-jlh_kotak = int(grid)
+import subprocess
 
-if jlh_kotak == 3:
-    import grid_3x3
-if jlh_kotak == 4:
-    import grid_4x4
-if jlh_kotak == 5:
-    import grid_5x5
+while True:
+    try:
+        choice = int(input("Please enter your choice: "))
+    except ValueError:
+        print("Insert another value!")
+        continue
+    else:
+        break
+if choice == 3: 
+    subprocess.call(['python', 'grid_3x3.py'])
+elif choice == 4: 
+    subprocess.call(['python', 'grid_4x4.py'])
+elif choice == 5: 
+    subprocess.call(['python', 'grid_5x5.py'])
 else:
-   print("Grid tidak ditemukan!")
+    print("Grid tidak ditemukan!")
