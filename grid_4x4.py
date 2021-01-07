@@ -61,28 +61,63 @@ total = input("Masukkan Total yang diinginkan : ")
 print(type(total))
 totalnilai = int(total)
 
-kotakmsp_tkt = []
-kotakmsp_tkt.append([a,b,c,d])
-kotakmsp_tkt.append([e,f,g,h])
-kotakmsp_tkt.append([i,j,k,l])
-kotakmsp_tkt.append([m,n,o,p])
+kotakmsp = []
+kotakmsp.append([a,b,c,d])
+kotakmsp.append([e,f,g,h])
+kotakmsp.append([i,j,k,l])
+kotakmsp.append([m,n,o,p])
 
 
-def checkingMSP(kotakmsp_tkt):
+def checkingMSP(kotakmsp):
     global totalnilai
     for row in range(0,4):
         for col in range(0,4):
-            if kotakmsp_tkt[row][col]==0:
+            if kotakmsp[row][col]==0:
                 return False
     for row in range(0,4):
-        if (kotakmsp_tkt[row][0]+kotakmsp_tkt[row][1]+kotakmsp_tkt[row][2]+kotakmsp_tkt[row][3])!=totalnilai:
+        if (kotakmsp[row][0]+kotakmsp[row][1]+kotakmsp[row][2]+kotakmsp[row][3])!=totalnilai:
             return False
     for col in range(0,4):
-        if (kotakmsp_tkt[0][col]+kotakmsp_tkt[1][col]+kotakmsp_tkt[2][col]+kotakmsp_tkt[3][col])!=totalnilai:
+        if (kotakmsp[0][col]+kotakmsp[1][col]+kotakmsp[2][col]+kotakmsp[3][col])!=totalnilai:
             return False
-    if (kotakmsp_tkt[0][0]+kotakmsp_tkt[1][1]+kotakmsp_tkt[2][2]+kotakmsp_tkt[3][3])!=totalnilai:
+    if (kotakmsp[0][0]+kotakmsp[1][1]+kotakmsp[2][2]+kotakmsp[3][3])!=totalnilai:
         return False
-    if (kotakmsp_tkt[0][3]+kotakmsp_tkt[1][2]+kotakmsp_tkt[2][1]+kotakmsp_tkt[3][0])!=totalnilai:
+    if (kotakmsp[0][3]+kotakmsp[1][2]+kotakmsp[2][1]+kotakmsp[3][0])!=totalnilai:
         return False
     return True
 
+
+    # In[36]:
+
+
+def penyelesaiantkt(kotakmsp):
+    for i in range(0,16):
+        row=i//4
+        col=i%4
+        if kotakmsp[row][col]==0:
+            print("Nilai pada kotak-kotak sedang diperiksa")
+            for value in range (1,17):
+                if not(value in kotakmsp[0] or value in kotakmsp[1] or value in kotakmsp[2] or value in kotakmsp[3]):
+                    kotakmsp[row][col]= value
+                    if checkingMSP(kotakmsp):
+                        print("Nilai pada kotak-kotak sudah selesai diperiksa.")
+                        return True
+                    else:
+                        if penyelesaiantkt(kotakmsp):
+                            return True
+            break
+    print(kotakmsp)
+    kotakmsp[row][col] = 0
+
+    # In[37]:
+
+
+solved = penyelesaiantkt(kotakmsp)
+if solved:
+    print("Hasil Penyelesaian:")
+    print (" [ {} ]    [ {} ]    [ {} ]    [ {} ]".format(kotakmsp[0][0], kotakmsp[0][1], kotakmsp[0][2], kotakmsp[0][3]))
+    print (" [ {} ]    [ {} ]    [ {} ]    [ {} ]".format(kotakmsp[1][0], kotakmsp[1][1], kotakmsp[1][2], kotakmsp[1][3]))
+    print (" [ {} ]    [ {} ]    [ {} ]    [ {} ]".format(kotakmsp[2][0], kotakmsp[2][1], kotakmsp[2][2], kotakmsp[2][3]))
+    print (" [ {} ]    [ {} ]    [ {} ]    [ {} ]".format(kotakmsp[3][0], kotakmsp[3][1], kotakmsp[3][2], kotakmsp[3][3]))
+else:
+    print("Magic Square Puzzle sudah selesai")
