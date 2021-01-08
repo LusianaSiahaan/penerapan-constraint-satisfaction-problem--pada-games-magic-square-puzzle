@@ -1,16 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[51]:
-
-
-#PROYEK MAGICSQUARE TWOPERCENT
-
-
-# In[14]:
-
-
-#3 X 3
+#UNTUK GRID 3X3
 print("Susunan Kotak ")
 print("[(1,1) ; (1,2) ; (1,3)]")
 print("[(2,1) ; (2,2) ; (2,3)]")
@@ -50,18 +38,10 @@ total = input("Masukkan Total yang diinginkan : ")
 print(type(total))
 totalnilai = int(total)
 
-
-# In[34]:
-
-
-#tkt = tiga kali tiga
 kotakmsp_tkt = []
 kotakmsp_tkt.append([a,b,c])
 kotakmsp_tkt.append([d,e,f])
 kotakmsp_tkt.append([g,h,i])
-
-
-# In[35]:
 
 
 def checkingMSP(kotakmsp_tkt):
@@ -82,8 +62,6 @@ def checkingMSP(kotakmsp_tkt):
         return False
     return True
 
-
-# In[36]:
 
 
 def penyelesaiantkt(kotakmsp_tkt):
@@ -106,9 +84,6 @@ def penyelesaiantkt(kotakmsp_tkt):
     kotakmsp_tkt[row][col] = 0
 
 
-# In[37]:
-
-
 solved = penyelesaiantkt(kotakmsp_tkt)
 if solved:
     print("Hasil Penyelesaian:")
@@ -116,11 +91,4 @@ if solved:
     print (" [ {} ]    [ {} ]    [ {} ]".format(kotakmsp_tkt[1][0], kotakmsp_tkt[1][1], kotakmsp_tkt[1][2]))
     print (" [ {} ]    [ {} ]    [ {} ]".format(kotakmsp_tkt[2][0], kotakmsp_tkt[2][1], kotakmsp_tkt[2][2]))
 else:
-    print("Magic Square Puzzle sudah selesai")
-
-
-# In[ ]:
-
-
-
-
+    print("Magic Square Puzzle tidak dapat diselesaikan. Silahkan run kembali.")
