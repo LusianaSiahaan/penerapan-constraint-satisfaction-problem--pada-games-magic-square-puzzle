@@ -6,6 +6,7 @@ print("[(2,1) ; (2,2) ; (2,3) ; (2,4)]")
 print("[(3,1) ; (3,2) ; (3,3) ; (3,4)]")
 print("[(4,1) ; (4,2) ; (4,3) ; (4,4)]")
 
+#Mendefinisikan inputan kotak 4x4 
 satuA = input("Masukkan Angka Kotak 1,1 = ")
 print(type(satuA))
 a = int(satuA)
@@ -67,7 +68,7 @@ kotakmsp.append([e,f,g,h])
 kotakmsp.append([i,j,k,l])
 kotakmsp.append([m,n,o,p])
 
-
+#fungsi untuk melakukan pengecekan kotak MSP
 def checkingMSP(kotakmsp):
     global totalnilai
     for row in range(0,4):
@@ -86,6 +87,7 @@ def checkingMSP(kotakmsp):
         return False
     return True
 
+#fungsi untuk melakukan penyelesain mencari nilai kotak yang kosong
 def penyelesaiantkt(kotakmsp):
     for i in range(0,16):
         row=i//4
@@ -105,7 +107,7 @@ def penyelesaiantkt(kotakmsp):
     print(kotakmsp)
     kotakmsp[row][col] = 0
 
-
+#MMemulai penyelesaian
 solved = penyelesaiantkt(kotakmsp)
 if solved:
     print("Hasil Penyelesaian:")
