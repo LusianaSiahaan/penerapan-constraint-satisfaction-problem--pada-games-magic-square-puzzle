@@ -1,5 +1,10 @@
 #Grid 4x4
 #Kelompok_twopercent
+print("Susunan Kotak ")
+print("[(1,1) ; (1,2) ; (1,3) ; (1,4)]")
+print("[(2,1) ; (2,2) ; (2,3) ; (2,4)]")
+print("[(3,1) ; (3,2) ; (3,3) ; (3,4)]")
+print("[(4,1) ; (4,2) ; (4,3) ; (4,4)]")
 
 #Mendefinisikan inputan kotak 4x4 
 satuA = input("Masukkan Angka Kotak 1,1 = ")
@@ -102,7 +107,7 @@ def penyelesaiantkt(kotakmsp):
     print(kotakmsp)
     kotakmsp[row][col] = 0
 
-#MMemulai penyelesaian
+#Memulai penyelesaian
 solved = penyelesaiantkt(kotakmsp)
 if solved:
     print("Hasil Penyelesaian:")
