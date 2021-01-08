@@ -86,10 +86,6 @@ def checkingMSP(kotakmsp):
         return False
     return True
 
-
-    # In[36]:
-
-
 def penyelesaiantkt(kotakmsp):
     for i in range(0,16):
         row=i//4
@@ -109,8 +105,6 @@ def penyelesaiantkt(kotakmsp):
     print(kotakmsp)
     kotakmsp[row][col] = 0
 
-    # In[37]:
-
 
 solved = penyelesaiantkt(kotakmsp)
 if solved:
@@ -120,4 +114,4 @@ if solved:
     print (" [ {} ]    [ {} ]    [ {} ]    [ {} ]".format(kotakmsp[2][0], kotakmsp[2][1], kotakmsp[2][2], kotakmsp[2][3]))
     print (" [ {} ]    [ {} ]    [ {} ]    [ {} ]".format(kotakmsp[3][0], kotakmsp[3][1], kotakmsp[3][2], kotakmsp[3][3]))
 else:
-    print("Magic Square Puzzle sudah selesai")
+    print("Tidak dapat diselesaikan!")
